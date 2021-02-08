@@ -1,10 +1,11 @@
 class Drone:
-    def __init__(self,id,max_payload,pos):
+    def __init__(self, id: int, max_payload, pos):
         self.id = id
         self.payload = []
         self.capacity = max_payload
         self.current_position = pos
         self.busy = False
+        self.free_after = 0
 
     def is_busy(self):
         return self.busy
@@ -12,7 +13,7 @@ class Drone:
     def get_payload(self):
         return self.payload
 
-    def update_payload(self,id,quantity,keyword):
+    def update_payload(self, id, quantity, keyword):
         if keyword == 'add':
             self.payload[id] += quantity
 
