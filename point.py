@@ -1,7 +1,7 @@
 import math
 
 
-class Point():
+class Point:
 
     def __init__(self, x, y):
         self.X = x
