@@ -19,3 +19,6 @@ class Drone:
         else:
             if self.payload[id] >= quantity:
                 self.payload[id] -= quantity
+
+    def has_payload(self):
+        return len(self.payload) == 0

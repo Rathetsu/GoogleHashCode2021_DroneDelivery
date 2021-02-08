@@ -1,11 +1,10 @@
-import math
-from collections import Counter
-from point import Point
+from definitions.point import Point
+from definitions.order import Order
+from definitions.warehouse import Warehouse
 
+def parse_file(input_path):
 
-def parse_file(input):
-
-    with open(input) as f:
+    with open(input_path) as f:
 
         # parameters of the simulation
         num_rows, num_cols, num_drones, deadline, max_payload = map(
@@ -24,10 +23,7 @@ def parse_file(input):
             position = Point(r, c)
             warehouse_stock = list(map(int, f.readline().split(' ')))
             assert num_products == len(warehouse_stock)
-            warehouse = {
-                'position': position,
-                'stock': warehouse_stock,
-            }
+            warehouse = Warehouse(i,position,warehouse_stock)
             warehouse_list.append(warehouse)
 
         # customer orders
@@ -43,10 +39,8 @@ def parse_file(input):
             for product_id in product_types_in_order:
                 shopping_cart[product_id] += 1
 
-            order = {
-                'position': position,
-                'shopping_cart': shopping_cart,
-            }
+
+            order = Order(i,position,shopping_cart)
             order_list.append(order)
 
     input_data = {
