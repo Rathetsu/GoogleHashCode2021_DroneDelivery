@@ -1,7 +1,4 @@
-from point import Point
-import sys
-sys.path.append('../')
-
+from ..point import Point
 
 class Order:
     def __init__(self, id: int, pos: Point, shopping_cart):

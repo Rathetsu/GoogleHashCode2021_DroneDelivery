@@ -1,5 +1,5 @@
 class Drone:
-    def __init__(self, id, max_payload, pos):
+    def __init__(self, id: int, max_payload, pos):
         self.id = id
         self.payload = []
         self.capacity = max_payload

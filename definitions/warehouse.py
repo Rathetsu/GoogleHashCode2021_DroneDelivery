@@ -1,9 +1,11 @@
-from definitions.Product import Product
+from definintions.product import Product
+from ..point import Point
+
 
 
 class Warehouse:
 
-    def __init__(self,id,pos,products):
+    def __init__(self, id: int, pos: Point, products):
         self.pos = pos
         self.products = products
         self.id = id
@@ -11,8 +13,7 @@ class Warehouse:
     def is_empty(self):
         return len(self.products) == 0
 
-    
-    def update_product(self,id,quantity,keyword):
+    def update_product(self, id, quantity, keyword):
         if keyword == 'add':
             self.products[id] += quantity
 
